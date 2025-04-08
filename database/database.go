@@ -2,6 +2,7 @@
 package database
 
 import (
+	"github.com/sudomopoy/fileuploader/internal/entity"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )

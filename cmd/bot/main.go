@@ -25,20 +25,14 @@ func main() {
 
 	// Initialize repositories
 	userRepo := repository.NewUserRepository(db)
-	fileRepo := repository.NewFileRepository(db)
-	channelRepo := repository.NewChannelRepository(db)
 
 	// Initialize services
 	userService := service.NewUserService(userRepo)
-	fileService := service.NewFileService(fileRepo)
-	channelService := service.NewChannelService(channelRepo)
 
 	// Create handler
 	telegramHandler := handler.NewTelegramHandler(
 		bot,
 		userService,
-		fileService,
-		channelService,
 	)
 
 	u := tgbotapi.NewUpdate(0)
